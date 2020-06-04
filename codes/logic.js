@@ -1,6 +1,6 @@
 // logic.js - Project 2 - Test File
 
-// Create the map with our layers - center on data
+// Create the map with our layers - center on Columbus Ohio
 var map = L.map("map-id", {
     center: [39.9612, -82.9988],
     zoom: 11
@@ -36,7 +36,7 @@ L.icon = function (options) {
 };
 
 /*
-/// test icons
+/// test icons to see if they appear on map - yes this works!
 L.marker([39.75, -84.230507], {icon:blackIcon}).addTo(map);
 L.marker([39.770382, -84.194901], {icon:orangeIcon}).addTo(map);
 L.marker([39.778061, -84.172005], {icon:redIcon}).addTo(map);
