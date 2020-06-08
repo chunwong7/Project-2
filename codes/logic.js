@@ -135,13 +135,13 @@ d3.json("static/data/OH_test.json", function(data) {
 });
 
 
-// update legend html
+// update legend html with icons for crash severity
 function updateLegend(accidentCount) {
 	document.querySelector(".legend").innerHTML = [
-	"<p class='SEVERITY1'>Severity 1: " + accidentCount.SEVERITY1 + "</p>",
-	"<p class='Severity2'>Severity 2: " + accidentCount.SEVERITY2 + "</p>",
-	"<p class='Severity3'>Severity 3: " + accidentCount.SEVERITY3 + "</p>",
-	"<p class='Severity4'>Severity 4: " + accidentCount.SEVERITY4 + "</p>"	
+	"<p class='SEVERITY1'><img src=\"caraccident_black.png\">Severity 1: " + accidentCount.SEVERITY1 + "</p>",
+	"<p class='Severity2'><img src=\"caraccident_yellow.png\">Severity 2: " + accidentCount.SEVERITY2 + "</p>",
+	"<p class='Severity3'><img src=\"caraccident_orange.png\">Severity 3: " + accidentCount.SEVERITY3 + "</p>",
+	"<p class='Severity4'><img src=\"caraccident_red.png\">Severity 4: " + accidentCount.SEVERITY4 + "</p>"	
 	].join("");
 }
 
