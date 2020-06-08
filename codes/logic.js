@@ -18,7 +18,7 @@ var layers = {
 
 // Create the map with our layers
 // Create the map with our layers - center on Columbus Ohio
-var map = L.map("map", {
+var map = L.map("map-id", {
     center: [39.9612, -82.9988],
     zoom: 11,
     layers: [
