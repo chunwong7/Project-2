@@ -86,8 +86,10 @@ var icons = {
     })
 };
 
-
+// establish variable to contain status code for icon assignment
 var accidentStatusCode = [];
+
+// establish variable to collect number of each severity
 var accidentCount = {
     SEVERITY1: 0,
     SEVERITY2: 0,
@@ -95,19 +97,16 @@ var accidentCount = {
     SEVERITY4: 0  
 };
 
-
-//load csv data - 
+//load json data - 
 d3.json("static/data/OH_test.json", function(data) {
         var Adata = data;  
         //console.log(Adata);
         //console.log(Adata.length);
         Adata.forEach(function(data) {
-               
                 data.Start_Lat = +data.Start_Lat;
                 data.Start_Lng = +data.Start_Lng;
                 //console.log(`data.Start_Lng: ${data.Start_Lng}`);
                 //console.log(`Adata.Start_Lng: ${data.Start_Lng}`);
-        
                 if (data.Severity == 1) {
                     accidentStatusCode = "SEVERITY1";
                 } else if (data.Severity == 2) {
@@ -120,22 +119,22 @@ d3.json("static/data/OH_test.json", function(data) {
                 // update accidentStatusCode
                 accidentCount[accidentStatusCode]++;
                 console.log(`accidentStatusCode: ${accidentStatusCode}`)
-                // create new marker??? - this doesn't work
+                // create new marker
                 var newMarker = L.marker([data.Start_Lat, data.Start_Lng], {
                     icon: icons[accidentStatusCode]
-                });
-                // add the new marker
+                }); // end of create new marker
+                // add the new marker to layers
                 newMarker.addTo(layers[accidentStatusCode]);
-                // bind popup
+                // bind popup info to new marker
                 newMarker.bindPopup(data.ID + "<br> Date: " + data.Start_Time + "<br>" + data.Weather_Condition);
-            //}
+            
             // update legend
             updateLegend(accidentCount);
        }); // end of for each loop	
 });
 
 
-// update legend html with icons for crash severity
+// update legend html with icons and counts for crash severity
 function updateLegend(accidentCount) {
 	document.querySelector(".legend").innerHTML = [
 	"<p class='SEVERITY1'><img src=\"caraccident_black.png\">Severity 1: " + accidentCount.SEVERITY1 + "</p>",
