@@ -86,10 +86,8 @@ var icons = {
     })
 };
 
-// establish variable to contain status code for icon assignment
-var accidentStatusCode = [];
 
-// establish variable to collect number of each severity
+var accidentStatusCode = [];
 var accidentCount = {
     SEVERITY1: 0,
     SEVERITY2: 0,
@@ -97,16 +95,20 @@ var accidentCount = {
     SEVERITY4: 0  
 };
 
-//load json data - 
-d3.json("static/data/OH_test.json", function(data) {
+
+//load csv data - can load as json too
+//d3.json("static/data/OH_test.json", function(data) {})//
+d3.csv("static/data/OH_accident.csv", function(data) {
         var Adata = data;  
         //console.log(Adata);
         //console.log(Adata.length);
         Adata.forEach(function(data) {
-                data.Start_Lat = +data.Start_Lat;
-                data.Start_Lng = +data.Start_Lng;
+               
+                data.Lat = +data.Lat;
+                data.Lng = +data.Lng;
                 //console.log(`data.Start_Lng: ${data.Start_Lng}`);
                 //console.log(`Adata.Start_Lng: ${data.Start_Lng}`);
+        
                 if (data.Severity == 1) {
                     accidentStatusCode = "SEVERITY1";
                 } else if (data.Severity == 2) {
@@ -118,23 +120,23 @@ d3.json("static/data/OH_test.json", function(data) {
                 }
                 // update accidentStatusCode
                 accidentCount[accidentStatusCode]++;
-                console.log(`accidentStatusCode: ${accidentStatusCode}`)
+                //console.log(`accidentStatusCode: ${accidentStatusCode}`)
                 // create new marker
-                var newMarker = L.marker([data.Start_Lat, data.Start_Lng], {
+                var newMarker = L.marker([data.Lat, data.Lng], {
                     icon: icons[accidentStatusCode]
-                }); // end of create new marker
-                // add the new marker to layers
+                });
+                // add the new marker
                 newMarker.addTo(layers[accidentStatusCode]);
-                // bind popup info to new marker
-                newMarker.bindPopup(data.ID + "<br> Date: " + data.Start_Time + "<br>" + data.Weather_Condition);
-            
+                // bind popup
+                newMarker.bindPopup(data.ID + "<br> Date: " + data.Time);
+            //}
             // update legend
             updateLegend(accidentCount);
        }); // end of for each loop	
 });
 
 
-// update legend html with icons and counts for crash severity
+// update legend html with icons for crash severity
 function updateLegend(accidentCount) {
 	document.querySelector(".legend").innerHTML = [
 	"<p class='SEVERITY1'><img src=\"caraccident_black.png\">Severity 1: " + accidentCount.SEVERITY1 + "</p>",
