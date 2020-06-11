@@ -17,9 +17,9 @@ var layers = {
 	};
 
 // Create the map with our layers
-// Create the map with our layers - center on Columbus Ohio
+// Create the map with our layers - center on Cleveland Ohio
 var map = L.map("map", {
-    center: [39.9612, -82.9988],
+    center: [41.4993, -81.6944],
     zoom: 11,
     layers: [
 		layers.SEVERITY1,
