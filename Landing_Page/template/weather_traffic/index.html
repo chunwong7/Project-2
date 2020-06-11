@@ -41,7 +41,7 @@
             </div>
         </div>
     </header>
-        
+    <div class="my-4">   
     <!-- Projects-->
     <section class="dataset-section bg-light" id="dataset">
         <div class="container">
@@ -59,15 +59,26 @@
 <div class="row align-items-center no-gutters mb-4 mb-lg-5">
     <div class="col-12">
         <h4>Data Source</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis sapien sit amet luctus porta. Curabitur lorem arcu, venenatis at turpis eu, semper ornare magna. Phasellus congue ipsum ut nibh faucibus, quis sodales libero congue. Duis mattis elit vel luctus suscipit. Nulla varius lectus a turpis placerat, id finibus eros convallis. In id convallis nisi, viverra faucibus erat. Maecenas sapien lacus, sollicitudin et sagittis a, facilisis in mi. Nulla quis dignissim elit, non cursus quam. Vestibulum sit amet orci in ex fermentum imperdiet eu viverra tortor.</p>
+        <h5>A Countrywide Traffic Accident Dataset (2016 - 2019)</h5> 
+        <p>https://www.kaggle.com/sobhanmoosavi/us-accidents</p>        
 
+        <p>The data we are using comes from Kaggle. The dataset contains about 3 million accident records from the 48 states on the North American continent plus D.C., collected from Feburary 2016
+        to December 2019. Next update on the data will come in December 2020.</p>
+        <p>Source:</p>
+    
+        <ul>
+            <li>Moosavi, Sobhan, Mohammad Hossein Samavatian, Srinivasan Parthasarathy, and Rajiv Ramnath. “A Countrywide Traffic Accident Dataset.”, arXiv preprint arXiv:1906.05409 (2019).</li>
+            <li>Moosavi, Sobhan, Mohammad Hossein Samavatian, Srinivasan Parthasarathy, Radu Teodorescu, and Rajiv Ramnath. “Accident Risk Prediction based on Heterogeneous Sparse Data: New Dataset and Insights.” In proceedings of the 27th ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems, ACM, 2019.</li>
+        </ul>
     </div>
     <div class="col-12">
         <h4>Data Preparation</h4>
-        <p>Vivamus finibus id quam vel imperdiet. Cras in condimentum augue, eget ornare lorem. Ut ornare efficitur ipsum. Mauris tempus felis tortor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi luctus accumsan facilisis. Aliquam eu cursus lacus. Fusce id metus posuere, congue diam a, bibendum metus.</p>
+        <p>There are 49 columns in the data set. The data that we kept are ID, severity, Start_Time, Start_Lat, Start_Lng, City, State, Temperature(F), Humidity(%), Visibility(mi), Wind_Speed(mph), and Weather_Condition. 
+            There are over 100 types of weather condition and we condensed them to 10 unqiue weather conditions. Rows with empty data are discarded. All of the weather data are separated into one CSV while all the accidents 
+            data for each state are separated into individual CSVs. 
+        </p>
     </div>
-    
-    <div class="col-12">
+    <!--div class="col-12">
         <h4>Data Analysis</h4>
         <p>Sed ultricies est a odio eleifend, a viverra urna finibus. Fusce et tortor vel neque commodo accumsan. Fusce mollis enim in neque porta dapibus. Vivamus at tortor nisi. Fusce venenatis sollicitudin risus, id scelerisque metus porttitor eget. Vestibulum tempus id tellus et porttitor. Ut vestibulum lectus vel blandit suscipit. Aliquam erat volutpat. Vivamus gravida, dui sit amet ullamcorper sodales, urna lacus pharetra nibh, quis lacinia massa risus eu enim. Ut malesuada aliquam aliquet. Etiam faucibus mattis suscipit. Fusce at cursus arcu. Ut viverra est a consectetur rutrum. Proin in nisi condimentum, maximus mi porta, facilisis sapien. Sed ultrices odio quis massa luctus blandit ac a est. Mauris fringilla quis tortor nec mollis.</p>
 
@@ -115,8 +126,8 @@
         <div class="row">
             <div class="col-md-10 col-lg-8 mx-auto text-center">
                 <i class="far fa-map fa-2x mb-2 text-white"></i>
-                <h2 class="text-white mb-5">Maps</h2>
-                Add map embed and/or images here
+                <h2 class="text-white mb-5"></h2>
+                
             </div>
         </div>
     </div>
@@ -172,19 +183,26 @@
         <div class="row">
             <div class="col-4">
                 <figure class="figure">
-                    <img src="https://via.placeholder.com/275" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                    <img src="assets/img/Randy.png" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
                     <figcaption class="figure-caption"></figcaption>
                 </figure>
                 <h5 class="text-white mb-4 text-center">Randall Dettmer</h5>
-                <p class="text-white-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis sapien sit amet luctus porta. Curabitur lorem arcu, venenatis at turpis eu, semper ornare magna. Phasellus congue ipsum ut nibh faucibus, quis sodales libero congue.</p>
+                <p class="text-white-50">Data Scientist with a background in supply chain and logistics with skills in Excel, Python, SQL
+                    and Tableau from Case Western Reserves’ Data Science Bootcamp. Passionate about
+                    learning, have a strong desire for knowledge and feel continuous learning is a way of life.
+                    History of collaborating with partners within the supply chain to improve forecasts, stabilize
+                    inventory variability and reduce freight costs. Thrives in environments where little to no direction
+                    or supervision is required; and solving complex problems with minimal assistance that others
+                    may struggle to solve. An APICS Certified Supply Chain Professional with an MBA and a Green
+                    Belt in Lean Six Sigma.</p>
             </div>
             <div class="col-4"> 
                 <figure class="figure">
-                    <img src="https://via.placeholder.com/275" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                    <img src="assets/img/Deb2020.jpg" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
                     <figcaption class="figure-caption"></figcaption>
                 </figure>
-                <h5 class="text-white mb-4 text-center">Debra Fenty</h5>
-                <p class="text-white-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis sapien sit amet luctus porta. Curabitur lorem arcu, venenatis at turpis eu, semper ornare magna. Phasellus congue ipsum ut nibh faucibus, quis sodales libero congue. </p>                        
+                <h5 class="text-white mb-4 text-center">Dr. Debra Fenty</h5>
+                <p class="text-white-50">Hardworking and highly motivated Data Analyst with a passion for big data and problem solving.  My analytic skills include, Python, SQL, R and Javascript. I am an effective leader who believes that collaboration, communication and transparency are key to creating an efficient team.  I earned my PhD in Higher Education Administration and have been working in higher education for over 15 years.  Our reliance on data outcomes to set policy and institute initiatives for student success have become mainstays of our existence. I am a dedicated leader, adept at collecting, analyzing and creating clear, concise visualizations to present data outcomes.  I look forward to contributing to student’s success and moving organizations to the next level.</p>                        
             </div>
             <div class="col-4"> 
                 <figure class="figure">
